@@ -5,6 +5,9 @@
     width: 100%;
     padding: 20px;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-link {
@@ -12,6 +15,26 @@
 }
 
 .logo {
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin-right: 40px;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+    transform: scale(1.05);
+}
     height: 50px;
     transition: transform 0.3s ease;
 }
