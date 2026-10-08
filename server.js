@@ -7,6 +7,11 @@ const port = 3000;
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Route for root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // API endpoint
 app.get('/api/message', (req, res) => {
     res.json({ message: 'Hello from the backend!' });
