@@ -1,3 +1,25 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.logo {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
 .hero-banner {
     background-image: url('images/NewTown-banner.jpg');
     background-size: cover;
