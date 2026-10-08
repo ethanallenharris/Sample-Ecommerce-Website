@@ -21,7 +21,7 @@ node server.js
 2. Open your web browser and visit: http://localhost:3000
 
 ## Project Structure
-- `index.html` - Main HTML file
-- `style.css` - CSS styles
-- `script.js` - Frontend JavaScript
+- `public/index.html` - Main HTML file
+- `public/style.css` - CSS styles
+- `public/script.js` - Frontend JavaScript
 - `server.js` - Backend server
