@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | NewTown Apparel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="images/NewTownLogo.png" alt="NewTown Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="shop.html" class="nav-link active">Shop</a>
+            <a href="#" class="nav-link">Collections</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-icons">
+            <a href="#" class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="user-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+    
+    <section class="shop-header">
+        <h1>Shop All Products</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+    
+    <section class="all-products">
+        <div class="tshirt-grid" id="productGrid">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+    </section>
+    
+    <footer class="site-footer">
+        <!-- Same footer as index.html -->
+    </footer>
+    
+    <div class="cart-modal" id="cartModal">
+        <!-- Same cart modal as index.html -->
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
