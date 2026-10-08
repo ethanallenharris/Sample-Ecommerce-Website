@@ -2,7 +2,7 @@
     background-image: url('images/NewTown-banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 1080px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,38 +20,6 @@
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-}
-
-.container {
-    margin-top: 2rem;
-    text-align: center;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#messageDisplay {
-    margin-top: 1rem;
-    font-size: 1.2rem;
 }
