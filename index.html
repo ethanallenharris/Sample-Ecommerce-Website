@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Web App</title>
+    <title>NewTown Apparel | Premium Streetwear</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -13,27 +14,174 @@
         </a>
         <div class="nav-links">
             <a href="/shop" class="nav-link">Shop</a>
-            <a href="#" class="nav-link">Media</a>
+            <a href="#" class="nav-link">Collections</a>
+            <a href="#" class="nav-link">About</a>
             <a href="#" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-icons">
+            <a href="#" class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="user-icon">
+                <i class="fas fa-user"></i>
+            </a>
         </div>
     </nav>
     <div class="hero-banner">
-        <div class="hero-text">NewTown</div>
+        <div class="hero-content">
+            <div class="hero-text">NewTown</div>
+            <div class="hero-subtext">Premium Streetwear Since 2010</div>
+            <button class="shop-now-btn">Shop New Arrivals</button>
+        </div>
         <div class="arrow-down"></div>
     </div>
-    <div class="tshirt-grid">
-        <div class="tshirt-modal">
-            <img src="images/TShirtSketch.jpg" alt="T-Shirt 1">
+    
+    <section class="featured-products">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="tshirt-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/TShirtSketch.jpg" alt="T-Shirt 1">
+                    <button class="quick-view">Quick View</button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Urban Sketch Tee</h3>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-colors">
+                        <span class="color-option" style="background-color: #000;"></span>
+                        <span class="color-option" style="background-color: #fff;"></span>
+                        <span class="color-option" style="background-color: #2a5aff;"></span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/TShirtSimpleBlue.jpg" alt="T-Shirt 2">
+                    <button class="quick-view">Quick View</button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Blue Tee</h3>
+                    <div class="product-price">$29.99</div>
+                    <div class="product-colors">
+                        <span class="color-option" style="background-color: #2a5aff;"></span>
+                        <span class="color-option" style="background-color: #000;"></span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/NewtownRacetrackBlack.jpg" alt="T-Shirt 3">
+                    <button class="quick-view">Quick View</button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Racetrack Black Tee</h3>
+                    <div class="product-price">$39.99</div>
+                    <div class="product-colors">
+                        <span class="color-option" style="background-color: #000;"></span>
+                        <span class="color-option" style="background-color: #fff;"></span>
+                        <span class="color-option" style="background-color: #ff2a2a;"></span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/TShirtNewtownClassicBlue.jpg" alt="T-Shirt 4">
+                    <button class="quick-view">Quick View</button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Blue Premium</h3>
+                    <div class="product-price">$44.99</div>
+                    <div class="product-colors">
+                        <span class="color-option" style="background-color: #2a5aff;"></span>
+                        <span class="color-option" style="background-color: #000;"></span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
         </div>
-        <div class="tshirt-modal">
-            <img src="images/TShirtSimpleBlue.jpg" alt="T-Shirt 2">
+    </section>
+    
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to get exclusive offers and new product alerts</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
-        <div class="tshirt-modal">
-            <img src="images/NewtownRacetrackBlack.jpg" alt="T-Shirt 3">
+    </section>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Store Locations</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p>Email: info@newtown.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
         </div>
-        <div class="tshirt-modal">
-            <img src="images/TShirtNewtownClassicBlue.jpg" alt="T-Shirt 4">
+        <div class="footer-bottom">
+            <p>&copy; 2023 NewTown Apparel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
