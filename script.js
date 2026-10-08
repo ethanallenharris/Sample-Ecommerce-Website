@@ -69,6 +69,18 @@ const products = [
         price: 44.99,
         image: "images/TShirtNewtownClassicBlue.jpg",
         colors: ['#2a5aff', '#000']
+    },
+    {
+        name: "Vintage Logo Tee",
+        price: 32.99,
+        image: "images/TShirtVintageLogo.jpg",
+        colors: ['#000', '#fff', '#ff2a2a']
+    },
+    {
+        name: "Graphic Print Hoodie",
+        price: 59.99,
+        image: "images/HoodieGraphicPrint.jpg",
+        colors: ['#000', '#2a5aff']
     }
 ];
 
