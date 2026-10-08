@@ -144,4 +144,11 @@ function setupSearch() {
 if (window.location.pathname.includes('shop.html')) {
     renderProducts(products);
     setupSearch();
+    
+    // Add active class to Shop link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.textContent === 'Shop') {
+            link.classList.add('active');
+        }
+    });
 }
