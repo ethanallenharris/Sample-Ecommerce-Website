@@ -13,19 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Open cart modal
-    cartIcon.addEventListener('click', function(e) {
-        e.preventDefault();
-        cartModal.style.display = 'block';
-    });
+    if (cartIcon) {
+        cartIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (cartModal) cartModal.style.display = 'block';
+        });
+    }
 
     // Close cart modal
-    closeCart.addEventListener('click', function() {
-        cartModal.style.display = 'none';
-    });
+    if (closeCart) {
+        closeCart.addEventListener('click', function() {
+            if (cartModal) cartModal.style.display = 'none';
+        });
+    }
 
     // Close modal when clicking outside
     window.addEventListener('click', function(e) {
-        if (e.target === cartModal) {
+        if (cartModal && e.target === cartModal) {
             cartModal.style.display = 'none';
         }
     });
