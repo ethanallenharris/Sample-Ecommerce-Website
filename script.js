@@ -34,180 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Product data
-    const products = [
-        {
-            name: "Urban Sketch Tee",
-            price: 34.99,
-            image: "images/TShirtSketch.jpg",
-            colors: ['#000', '#fff', '#2a5aff']
-        },
-        {
-            name: "Classic Blue Tee",
-            price: 29.99,
-            image: "images/TShirtSimpleBlue.jpg",
-            colors: ['#2a5aff', '#000']
-        },
-        {
-            name: "Racetrack Black Tee",
-            price: 39.99,
-            image: "images/NewtownRacetrackBlack.jpg",
-            colors: ['#000', '#fff', '#ff2a2a']
-        },
-        {
-            name: "Classic Blue Premium",
-            price: 44.99,
-            image: "images/TShirtNewtownClassicBlue.jpg",
-            colors: ['#2a5aff', '#000']
-        },
-        {
-            name: "Classic Grey Tee",
-            price: 32.99,
-            image: "images/NewtownClassicGrey.jpg",
-            colors: ['#808080', '#000', '#fff']
-        },
-        {
-            name: "Simple Black Tee",
-            price: 24.99,
-            image: "images/TShirtSimpleBlack.jpg",
-            colors: ['#000', '#fff']
-        },
-        {
-            name: "Navy Tote Classic Blue",
-            price: 39.99,
-            image: "images/navy-tote-classic-blue.jpg",
-            colors: ['#2a5aff']
-        },
-        {
-            name: "Navy Tote Logo",
-            price: 39.99,
-            image: "images/navy-tote-logo.jpg",
-            colors: ['#000']
+    // Update item quantity
+    function updateQuantity(index, change) {
+        cart[index].quantity += change;
+        
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
         }
-    ];
-
-    // Render products function
-    function renderProducts(productsArray) {
-        const productGrid = document.getElementById('productGrid');
-        if (!productGrid) return;
         
-        productGrid.innerHTML = '';
-        
-        productsArray.forEach(product => {
-            const colorsHTML = product.colors.map(color => 
-                `<span class="color-option" style="background-color: ${color};"></span>`
-            ).join('');
-            
-            productGrid.innerHTML += `
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">${product.name}</h3>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
-                        <div class="product-colors">
-                            ${colorsHTML}
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        // Reattach event listeners to new buttons
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                cartCount++;
-                updateCartCount();
-                
-                cartIcon.classList.add('animate');
-                setTimeout(() => {
-                    cartIcon.classList.remove('animate');
-                }, 500);
-            });
-        });
+        updateCartCount();
+        renderCartItems();
     }
 
-    // Render products to specific element
-    function renderProductsToElement(productsArray, element) {
-        element.innerHTML = '';
-        
-        productsArray.forEach(product => {
-            const colorsHTML = product.colors.map(color => 
-                `<span class="color-option" style="background-color: ${color};"></span>`
-            ).join('');
-            
-            element.innerHTML += `
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">${product.name}</h3>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
-                        <div class="product-colors">
-                            ${colorsHTML}
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        // Reattach event listeners to new buttons
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                cartCount++;
-                updateCartCount();
-                
-                cartIcon.classList.add('animate');
-                setTimeout(() => {
-                    cartIcon.classList.remove('animate');
-                }, 500);
-            });
-        });
+    // Remove item from cart
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartCount();
+        renderCartItems();
     }
 
-    // Search functionality
-    function setupSearch() {
-        const searchInput = document.getElementById('searchInput');
+    // Add to cart
+    function addToCart(product) {
+        const existingItem = cart.find(item => item.name === product.name);
         
-        if (!searchInput) return;
-        
-        const performSearch = () => {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const filteredProducts = products.filter(product => 
-                product.name.toLowerCase().includes(searchTerm)
-            );
-            renderProducts(filteredProducts);
-        };
-        
-        // Filter as user types
-        searchInput.addEventListener('input', performSearch);
-    }
-
-    // Initialize shop page
-    if (window.location.pathname.includes('shop.html')) {
-        renderProducts(products);
-        setupSearch();
-        
-        // Add active class to Shop link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.textContent === 'Shop') {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Initialize home page with 3 products
-    if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
-        // Render only first 3 products to featured section
-        const featuredGrid = document.getElementById('featuredProductsGrid');
-        if (featuredGrid) {
-            renderProductsToElement(products.slice(0, 3), featuredGrid);
-        }
-    }
-});
+        if (existingItem) {
+            existing极
