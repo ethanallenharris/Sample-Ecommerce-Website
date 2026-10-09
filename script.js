@@ -81,6 +81,18 @@ const products = [
         price: 59.99,
         image: "images/HoodieGraphicPrint.jpg",
         colors: ['#000', '#2a5aff']
+    },
+    {
+        name: "Classic Grey Tee",
+        price: 32.99,
+        image: "images/NewtownClassicGrey.jpg",
+        colors: ['#808080', '#000', '#fff']
+    },
+    {
+        name: "Simple Black Tee",
+        price: 24.99,
+        image: "images/TShirtSimpleBlack.jpg",
+        colors: ['#000', '#fff']
     }
 ];
 
