@@ -61,18 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ['#2a5aff', '#000']
         },
         {
-            name: "Vintage Logo Tee",
-            price: 32.99,
-            image: "images/TShirtVintageLogo.jpg",
-            colors: ['#000', '#fff', '#ff2a2a']
-        },
-        {
-            name: "Graphic Print Hoodie",
-            price: 59.99,
-            image: "images/HoodieGraphicPrint.jpg",
-            colors: ['#000', '#2a5aff']
-        },
-        {
             name: "Classic Grey Tee",
             price: 32.99,
             image: "images/NewtownClassicGrey.jpg",
@@ -83,6 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 24.99,
             image: "images/TShirtSimpleBlack.jpg",
             colors: ['#000', '#fff']
+        },
+        {
+            name: "Navy Tote Classic Blue",
+            price: 39.99,
+            image: "images/navy-tote-classic-blue.jpg",
+            colors: ['#2a5aff']
+        },
+        {
+            name: "Navy Tote Logo",
+            price: 39.99,
+            image: "images/navy-tote-logo.jpg",
+            colors: ['#000']
         }
     ];
 
