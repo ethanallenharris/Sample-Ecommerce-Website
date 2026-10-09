@@ -1,4 +1,101 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Cart functionality
+    let cartCount = 0;
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const cartCountElement = document.querySelector('.cart-count');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const closeCart = document.querySelector('.close-cart');
+
+    // Update cart count display
+    function updateCartCount() {
+        cartCountElement.textContent = cartCount;
+    }
+
+    // Open cart modal
+    cartIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        cartModal.style.display = 'block';
+    });
+
+    // Close cart modal
+    closeCart.addEventListener('click', function() {
+        cartModal.style.display = 'none';
+    });
+
+    // Add to cart functionality
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            cartCount++;
+            updateCartCount();
+            
+            // Add animation to cart icon
+            cartIcon.classList.add('animate');
+            setTimeout(() => {
+                cartIcon.classList.remove('animate');
+            }, 500);
+        });
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
+
+    // Product data
+    const products = [
+        {
+            name: "Urban Sketch Tee",
+            price: 34.99,
+            image: "images/TShirtSketch.jpg",
+            colors: ['#000', '#fff', '#2a5aff']
+        },
+        {
+            name: "Classic Blue Tee",
+            price: 29.99,
+            image: "images/TShirtSimpleBlue.jpg",
+            colors: ['#2a5aff', '#000']
+        },
+        {
+            name: "Racetrack Black Tee",
+            price: 39.99,
+            image: "images/NewtownRacetrackBlack.jpg",
+            colors: ['#000', '#fff', '#ff2a2a']
+        },
+        {
+            name: "Classic Blue Premium",
+            price: 44.99,
+            image: "images/TShirtNewtownClassicBlue.jpg",
+            colors: ['#2a5aff', '#000']
+        },
+        {
+            name: "Vintage Logo Tee",
+            price: 32.99,
+            image: "images/TShirtVintageLogo.jpg",
+            colors: ['#000', '#fff', '#ff2a2a']
+        },
+        {
+            name: "Graphic Print Hoodie",
+            price: 59.99,
+            image: "images/HoodieGraphicPrint.jpg",
+            colors: ['#000', '#2a5aff']
+        },
+        {
+            name: "Classic Grey Tee",
+            price: 32.99,
+            image: "images/NewtownClassicGrey.jpg",
+            colors: ['
+
+The issue occurs because the script runs before the DOM is fully loaded, causing elements to be unavailable during initialization. The solution is to wrap the entire script in a DOMContentLoaded event listener to ensure all DOM elements are available before execution.
+
+Here's the fix:
+
+script.js
+```javascript
+<<<<<<< SEARCH
 // Cart functionality
 let cartCount = 0;
 const cartIcon = document.getElementById('cartIcon');
