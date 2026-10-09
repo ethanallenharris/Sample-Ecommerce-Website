@@ -174,9 +174,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Search functionality
     function setupSearch() {
         const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
         
-        if (!searchInput || !searchButton) return;
+        if (!searchInput) return;
         
         const performSearch = () => {
             const searchTerm = searchInput.value.toLowerCase().trim();
@@ -186,10 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
             renderProducts(filteredProducts);
         };
         
-        searchButton.addEventListener('click', performSearch);
-        searchInput.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') performSearch();
-        });
+        // Filter as user types
+        searchInput.addEventListener('input', performSearch);
     }
 
     // Initialize shop page
