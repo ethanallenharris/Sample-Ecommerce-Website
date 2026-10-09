@@ -157,3 +157,53 @@ if (window.location.pathname.includes('shop.html')) {
         }
     });
 }
+
+// Initialize home page with 3 products
+if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+    // Render only first 3 products to featured section
+    const featuredGrid = document.getElementById('featuredProductsGrid');
+    if (featuredGrid) {
+        renderProductsToElement(products.slice(0, 3), featuredGrid);
+    }
+}
+
+// Render products to specific element
+function renderProductsToElement(productsArray, element) {
+    element.innerHTML = '';
+    
+    productsArray.forEach(product => {
+        const colorsHTML = product.colors.map(color => 
+            `<span class="color-option" style="background-color: ${color};"></span>`
+        ).join('');
+        
+        element.innerHTML += `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <button class="quick-view">Quick View</button>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-price">$${product.price.toFixed(2)}</div>
+                    <div class="product-colors">
+                        ${colorsHTML}
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        `;
+    });
+    
+    // Reattach event listeners to new buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            cartCount++;
+            updateCartCount();
+            
+            cartIcon.classList.add('animate');
+            setTimeout(() => {
+                cartIcon.classList.remove('animate');
+            }, 500);
+        });
+    });
+}
